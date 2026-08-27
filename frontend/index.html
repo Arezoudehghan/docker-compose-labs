@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compose Networks Lab</title>
+  <style>
+    body { font-family: sans-serif; max-width: 760px; margin: 3rem auto; padding: 0 1rem; line-height: 1.8; }
+    pre { direction: ltr; text-align: left; background: #f3f4f6; padding: 1rem; overflow: auto; }
+    button { padding: 0.6rem 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>آزمایش شبکه‌های Docker Compose</h1>
+  <p>مرورگر فقط به Frontend دسترسی دارد. Frontend به API و API به Redis متصل می‌شود.</p>
+  <button id="check" type="button">بررسی ارتباط API و Redis</button>
+  <pre id="result">برای اجرای تست روی دکمه کلیک کنید.</pre>
+  <script>
+    const button = document.getElementById('check');
+    const result = document.getElementById('result');
+    button.addEventListener('click', async () => {
+      result.textContent = 'در حال بررسی...';
+      try {
+        const response = await fetch('/api/info');
+        const payload = await response.json();
+        result.textContent = JSON.stringify(payload, null, 2);
+      } catch (error) {
+        result.textContent = `خطا: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

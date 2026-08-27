@@ -1,0 +1,28 @@
+name: Validate Compose Lab
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create local environment file
+        run: cp .env.example .env
+
+      - name: Validate Compose configuration
+        run: docker compose --env-file .env config --quiet
+
+      - name: Build local images
+        run: docker compose --env-file .env build --pull
