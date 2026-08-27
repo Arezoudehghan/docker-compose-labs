@@ -6,7 +6,7 @@ A focused lab that demonstrates health-aware startup, Docker Engine restart poli
 
 ```mermaid
 flowchart LR
-    Client["DEV-1 / 192.168.94.90"] -->|"HTTP :8086"| Adminer["Adminer / :8080"]
+    Client["DEV-1 / 192.0.2.10"] -->|"HTTP :8086"| Adminer["Adminer / :8080"]
     Adminer -->|"backend / db:5432"| DB["PostgreSQL 17"]
     DB --> Volume["db_data"]
 ```
@@ -18,10 +18,11 @@ flowchart LR
 
 ## Lab environment
 
-- Run the Compose project on `DEV-2` (`192.168.94.91`).
-- Test Adminer from `DEV-1` (`192.168.94.90`).
+- Run the Compose project on `DEV-2` (`192.0.2.11`).
+- Test Adminer from `DEV-1` (`192.0.2.10`).
 - The course path is `/opt/docker-labs/session37`; the files also work from any cloned directory.
 - Docker Compose `2.17.0` or newer is required for `depends_on.restart`.
+- The addresses `192.0.2.10` and `192.0.2.11` are documentation examples; replace them with the addresses assigned to your own VMs.
 
 ## Learning objectives
 
@@ -90,7 +91,7 @@ Verify the complete lab:
 Open the following address from `DEV-1`:
 
 ```text
-http://192.168.94.91:8086
+http://192.0.2.11:8086
 ```
 
 Use these values:

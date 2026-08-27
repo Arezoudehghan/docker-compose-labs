@@ -25,4 +25,4 @@ Use it only when data removal is intentional.
 
 ## Reporting a security issue
 
-Because this is a private learning repository, report security findings directly to the repository owner rather than opening a public issue.
+Follow the repository-wide [security policy](../SECURITY.md). Do not disclose security-sensitive details in a public issue.

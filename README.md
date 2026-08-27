@@ -1,13 +1,17 @@
 # Docker Compose Labs
 
+[![Validate Docker Compose Labs](https://github.com/Arezoudehghan/docker-compose-labs/actions/workflows/validate.yml/badge.svg)](https://github.com/Arezoudehghan/docker-compose-labs/actions/workflows/validate.yml)
+
 A structured collection of hands-on Docker Compose labs designed for a two-VM DevOps learning environment.
 
 ## Lab environment
 
 | Host | Address | Primary role |
 |---|---|---|
-| `DEV-1` | `192.168.94.90` | Build, GitLab, Runner, Nexus, and client tests |
-| `DEV-2` | `192.168.94.91` | Deploy, Docker Compose, and monitoring |
+| `DEV-1` | `192.0.2.10` | Build, GitLab, Runner, Nexus, and client tests |
+| `DEV-2` | `192.0.2.11` | Deploy, Docker Compose, and monitoring |
+
+> `192.0.2.10` and `192.0.2.11` are documentation-only example addresses. Replace them with the addresses assigned to your own lab VMs.
 
 ## Available sessions
 
@@ -38,6 +42,10 @@ Then enter the directory for the session you want to run and follow its `README.
 ## Automated validation
 
 GitHub Actions validates both Compose labs on every push to `main` and on every pull request. The workflow also checks shell-script syntax, builds the images used by Session 36, and pulls the pinned images used by Session 37.
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).
 
 ## Scope
 

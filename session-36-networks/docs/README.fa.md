@@ -1,6 +1,6 @@
 # راهنمای فارسی سناریوی Networks در Docker Compose
 
-این Repository یک سناریوی عملی برای یادگیری شبکه‌بندی در Docker Compose است و روی `DEV-1` با آدرس `192.168.94.90` اجرا می‌شود.
+این Repository یک سناریوی عملی برای یادگیری شبکه‌بندی در Docker Compose است و روی `DEV-1` اجرا می‌شود. آدرس `192.0.2.10` در این مستند فقط نمونه است و باید با IP واقعی ماشین آزمایشگاهی جایگزین شود.
 
 ## هدف سناریو
 
@@ -14,7 +14,7 @@
 
 ```mermaid
 flowchart LR
-    Client["مرورگر کاربر"] -->|"192.168.94.90:8086"| Frontend["Frontend / Nginx :80"]
+    Client["مرورگر کاربر"] -->|"192.0.2.10:8086"| Frontend["Frontend / Nginx :80"]
     Frontend -->|"frontend_net"| API["Python API :5000"]
     API -->|"backend_net"| Redis["Redis :6379"]
 ```

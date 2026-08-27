@@ -13,7 +13,7 @@ The application uses two isolated bridge networks:
 
 ```mermaid
 flowchart LR
-    Client["Client / Browser"] -->|"192.168.94.90:8086"| Frontend["Frontend\nNginx :80"]
+    Client["Client / Browser"] -->|"192.0.2.10:8086"| Frontend["Frontend\nNginx :80"]
     Frontend -->|"frontend_net\napi:5000"| API["Python API\n:5000"]
     API -->|"backend_net\nredis:6379"| Redis["Redis\n:6379"]
 ```
@@ -30,8 +30,10 @@ This project was designed for the following two-VM DevOps lab:
 
 | Host | Address | Role in this lab |
 |---|---|---|
-| `DEV-1` | `192.168.94.90` | Runs this Compose project |
-| `DEV-2` | `192.168.94.91` | Not modified; used to prove bridge networks are host-local |
+| `DEV-1` | `192.0.2.10` | Runs this Compose project |
+| `DEV-2` | `192.0.2.11` | Not modified; used to prove bridge networks are host-local |
+
+> The addresses `192.0.2.10` and `192.0.2.11` are documentation examples. Replace them with the addresses assigned to your own VMs.
 
 Docker bridge networks do not span multiple hosts. A network created on `DEV-1` is not available on `DEV-2`.
 
@@ -155,7 +157,7 @@ Expected response:
 Open the web interface:
 
 ```text
-http://192.168.94.90:8086
+http://192.0.2.10:8086
 ```
 
 ## Network verification

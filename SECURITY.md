@@ -19,6 +19,6 @@ docker compose down -v
 
 Use it only when permanent data removal is intended.
 
-## Reporting
+## Reporting a vulnerability
 
-This is a private educational repository. Report security findings directly to the repository owner.
+Do not disclose security-sensitive details in a public issue. If GitHub private vulnerability reporting is enabled, use the repository's **Security** tab and select **Report a vulnerability**. Otherwise, contact the repository owner through their GitHub profile with a non-sensitive summary first.
